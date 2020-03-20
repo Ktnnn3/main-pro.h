@@ -1,3 +1,4 @@
+//เพิ่มเติมใน class unit
 void unit::Show(){
 	cout<<"*************************";
 	for(int i=0;i<10;i++)
