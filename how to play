@@ -46,7 +46,7 @@ int main(){
 						cout<<"2.J is equal to 11\nQ K is equal to 12\nK is equal to 13\n";
 						cout<<"press enter to continue..."<<endl;
 						cin.get();
-						cout<<"3.card A has a score of 1 or 11,depending on which point you want card A to be.\n";
+						cout<<"3.card A has a score of 1.\n";
 						cout<<"press enter to continue..."<<endl;
 						cin.get();
 						cout<<"4.The total value of the cards equals 21 is blackjack.\n";
