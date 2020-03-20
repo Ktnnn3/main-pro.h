@@ -156,7 +156,7 @@ int main(){
 					player.gamelost();
 				}
 				
-				while(player.stand == true){ //การกระทำของ bot เมื่อ player เลือก stand
+				while(player.stand() == true){ //การกระทำของ bot เมื่อ player เลือก stand
 
 
 					while(bot.scorecheck() == true){
