@@ -151,9 +151,10 @@ int main(){
 
 
 				}
-				while(player.scorecheck()==false){
+				while(player.scorecheck() == false){
 					player.removemoney();
 					player.gamelost();
+					break;
 				}
 				
 				while(player.stand() == true){ //การกระทำของ bot เมื่อ player เลือก stand
@@ -164,7 +165,7 @@ int main(){
 						if(bot.getscore()<player.getscore()){
 							bot.Hit(cc);
 
-						}else if(bot.getscore()==player.getscore()==21){
+						}else if(bot.getscore()==player.getscore() && bot.getscore()==21){
 							player.gamedraw();
 							bot_action = 'E';
 							break;
