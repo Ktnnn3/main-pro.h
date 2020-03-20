@@ -1,9 +1,10 @@
 void unit::gamelost(){
-	cout<<"*************************";
-	cout<<"*                       *";
-	cout<<"*        You lost       *";
-	cout<<"*                       *";
-	cout<<"*************************";
+	cout<<""<<name<<"'s money is: "<<money<<"\n;
+	cout<<"*************************\n";
+	cout<<"*                       *\n";
+	cout<<"*        You lost       *\n";
+	cout<<"*                       *\n";
+	cout<<"*************************\n";
 }
 
 
