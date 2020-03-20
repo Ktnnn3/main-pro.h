@@ -161,32 +161,39 @@ int main(){
 					break;
 				}
 				
-				while(player.stand() == true){ //การกระทำของ bot เมื่อ player เลือก stand
+				if(player.scorecheck() != false){
+						while(player.stand() == true){ //การกระทำของ bot เมื่อ player เลือก stand
 
 
-					while(bot.scorecheck() == true){
+							while(bot.scorecheck() == true){
 						
-						if(bot.getscore()<player.getscore()){
-							bot.Hit(cc);
-                            cin.get();
-						}else if(bot.getscore()==player.getscore() && bot.getscore()==21){
-							player.gamedraw();
-							bot_action = 'E';
-							break;
-						}
+								if(bot.getscore()<player.getscore()){
+									bot.Hit(cc);
+									cout << "Enter ";
+                           		 	cin.get();
+								}else if(bot.getscore()==player.getscore() && bot.getscore()==21){
+									player.gamedraw();
+									bot_action = 'E';
+									break;
+								}
 
 
 
-					}
-					while(bot.scorecheck()==false){
-						player.Addmoney();
-						player.gamewin();
-						bot_action = 'E';
-						break;
-					}
-					if(bot_action = 'E')break;
+							}
+							while(bot.scorecheck()==false){
+								player.Addmoney();
+								player.gamewin();
+								bot_action = 'E';
+								break;
+							}
+							if(bot_action = 'E')break;
+
+						}	
+
 
 				}
+				
+				
 
 				//ใส่โค้ดเช็คว่าการ์ดบน cc จะหมดรึยัง ถ้าจะหมดให้รีใหม่
 
@@ -315,7 +322,6 @@ void unit::Hit(vector<Card> &a){
 bool unit::stand(){
 	stand_on = true;
 	return true;
-
 }
 
 void unit::newTurn(){
