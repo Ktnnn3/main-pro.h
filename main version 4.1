@@ -94,7 +94,7 @@ int main(){
 	srand(time(0));
 	while (menu==0){
 		unit player,bot;
-		char player_action = '\0',monster_action = '\0';
+		char player_action = '\0',bot_action = '\0';
 		int player_bit;
 		player.create("Player");
 		bot.create("bot");
@@ -166,6 +166,8 @@ int main(){
 
 						}else if(bot.getscore()==player.getscore()==21){
 							player.gamedraw();
+							bot_action = 'E';
+							break;
 						}
 
 
@@ -174,8 +176,10 @@ int main(){
 					while(bot.scorecheck()==false){
 						player.Addmoney();
 						player.gamewin();
+						bot_action = 'E';
+						break;
 					}
-					
+					if(bot_action = 'E')break;
 
 				}
 
