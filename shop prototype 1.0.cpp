@@ -3,17 +3,17 @@ int shop(){
 	int pricelist[11] = {100,80,50,200,500,150,300,550,5,99,1};
 	cout<<"\tWelcome To our shop!!!\n";
 	cout<<"\twhich one do you want to buy?\n";
-	cout<<"[1]GRAPPLING HOOK 100p\n";
-	cout<<"[2]CUTLASS 80p\n";
-	cout<<"[3]STINKPOT 50p\n";
-	cout<<"[4]MUSKET 200p\n";
-	cout<<"[5]CANNON 500p\n";
-	cout<<"[6]BOARDING AXE 150p\n";
-	cout<<"[7]BLUNDERBUS 300p\n";
-	cout<<"[8]AK-47 550p\n";
-	cout<<"[9]POCARI SWEAT 5p\n";
-	cout<<"[10]HOOK 99p\n";
-	cout<<"[11]VERY KAK ITEM 1p\n";
+	cout<<"[1]GRAPPLING HOOK 100b\n";
+	cout<<"[2]CUTLASS 80b\n";
+	cout<<"[3]STINKPOT 50b\n";
+	cout<<"[4]MUSKET 200b\n";
+	cout<<"[5]CANNON 500b\n";
+	cout<<"[6]BOARDING AXE 150b\n";
+	cout<<"[7]BLUNDERBUS 300b\n";
+	cout<<"[8]AK-47 550b\n";
+	cout<<"[9]POCARI SWEAT 5b\n";
+	cout<<"[10]HOOK 99b\n";
+	cout<<"[11]VERY KAK ITEM 1b\n";
 	cout<<"Select : ";
 	cin>>sel;
 	switch(sel){
