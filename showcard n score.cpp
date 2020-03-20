@@ -1,7 +1,7 @@
-void Show(unit x){
+void unit::Show(){
 	cout<<"*************************";
-	for(int i=0;i<x.onhand.size();i++)
-		cout<<""<<x.name<<"'s card is: "<<x.onhand[i]<<"\n";
-	cout<<""<<x.name<<"'s score is: "<<x.score<<"\n";
+	for(int i=0;i<10;i++)
+		cout<<""<<name<<"'s card is: "<<onhand[i]<<"\n";
+	cout<<""<<name<<"'s score is: "<<score<<"\n";
 	cout<<"*************************";
 }
