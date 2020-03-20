@@ -136,7 +136,7 @@ int main(){
 				bot.Hit(cc);
 				while(player.scorecheck() == true){
 					cout << "[H] Hit [S] Stand [E] Exit";
-					cout << "Enter your action: ";
+					cout << "\nEnter your action: ";
 					cin >> player_action;
 					player_action = toupper(player_action);
 					if(player_action == 'E'){
