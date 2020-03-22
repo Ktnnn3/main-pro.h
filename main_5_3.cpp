@@ -14,6 +14,7 @@
 using namespace std;
 int gameover=0;
 int gamestart=0,howtoplay=0,leaderB=0;
+char player_start = '\0';
 
 
 struct Card{
@@ -103,6 +104,7 @@ int main(){
 	cout<<"           [+] You get 500 Baht \n";
 	cout<<"--------------------------------------------\n";
 	//PlaySound(TEXT("coin.wav"), NULL, SND_SYNC); //do not unlock if you not install
+	//PlaySound("pirate.wav", NULL, SND_FILENAME|SND_LOOP|SND_ASYNC); //background musics 
 	
 	int menu=0;	
 	srand(time(0));
@@ -138,25 +140,16 @@ int main(){
 				c.namecard = name;
 				cc.push_back(c);
 			}
-			
-
 
 			while(true){
-				player.newTurn();
-				while(player.betmoney());
-				bot.newTurn();
-				bot.Hit(cc);
-				bot.Hit(cc);
-				while(player.scorecheck() == true){
-					cout << "[H] Hit [S] Stand [E] Exit";
+				player.newTurn();	
+				if(player_start == 'P'){
+					while(player.betmoney());
+					while(player.scorecheck() == true){
+					cout << "\t [H] Hit [S] Stand";
 					cout << "\nEnter your action: ";
 					cin >> player_action;
 					player_action = toupper(player_action); 
-					if(player_action == 'E'){
-						player.shop();
-						//?????????
-						//??story
-					} 
 					if(player_action == 'H') {
 						//PlaySound(TEXT("hit.wav"), NULL, SND_SYNC); //do not unlock if you not install
                         player.Hit(cc);
@@ -166,11 +159,34 @@ int main(){
 						//PlaySound(TEXT("save.wav"), NULL, SND_SYNC); //do not unlock if you not install
 						player.stand();
 						break;
-					}
-
-
-
+					}	
 				}
+			}else if(player_start == 'E'){
+				player.shop();
+			}
+			
+			while(player.scorecheck() == false){
+					player.removemoney();
+					player.gamelost();
+					break;
+				}
+				
+				player.checkgameover();
+				if(gameover != 0){
+
+					cout<<"--------------------------------------------\n";
+				    cout<<setw(35)<<"! ! G A M E O V E R ! !\n";
+				    cout<<"--------------------------------------------\n";
+				    cout<<"        Good bye the 'Pirate's Sea'.\n        and thank you to enjoy us.\n";
+					cout<<"               See you soon......\n";
+				    cout<<"--------------------------------------------\n";
+
+					break;
+				}
+				bot.newTurn();
+				bot.Hit(cc);
+				bot.Hit(cc);
+		
 				while(player.scorecheck() == false){
 					player.removemoney();
 					player.gamelost();
@@ -185,7 +201,7 @@ int main(){
 						
 								if(bot.getscore()<player.getscore()){
 									bot.Hit(cc);
-									cout << "Enter ";
+									cout << "[Enter] ";
                            		 	cin.get();
 								}else if(bot.getscore()==player.getscore() && bot.getscore()==21){
 									player.gamedraw();
@@ -211,9 +227,10 @@ int main(){
 				
 				
 
+
 				player.checkgameover();
 
-
+				
 				//??????? gameover ??????????????????????????? 0 ?????????????
 
 
@@ -344,6 +361,10 @@ void unit::newTurn(){
 	onhand.clear();
 	score = 0;
 	stand_on = false;
+	cout << "\t [P] Play [E] Exit";
+	cout << "\nEnter your action: ";
+	cin >> player_start;
+	player_start = toupper(player_start); 
 }
 
 
