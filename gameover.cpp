@@ -5,6 +5,8 @@ if(gameover != 0){
 	cout<<"--------------------------------------------\n";
     cout<<setw(35)<<"! ! G A M E O V E R ! !\n";
     cout<<"--------------------------------------------\n";
+    player.showitems();
+    cout<<"--------------------------------------------\n";
     cout<<"        Good bye the 'Pirate's Sea'.\n        and thank you to enjoy us.\n";
 	cout<<"               See you soon......\n           ";
     cout<<"--------------------------------------------\n";
