@@ -26,12 +26,15 @@ struct Card{
 class unit{
 		string name;
 		string typeofp;
+		vector<string> item; //items in shop
 		vector<string> onhand;  //?????????????????????
+		int leader = 0;
 		int money;		//?????????
 		int score;		//??????????????????????????
 		int betm;		//????????????????
 		bool stand_on;		
 	public:	
+		void showitemsnleader(); //show rank after lost
 		void shop(); //goto shop
         void showStatus(); //????		
 		bool betmoney(); //???????????? bet
@@ -177,6 +180,7 @@ int main(){
 					cout<<"--------------------------------------------\n";
 				    cout<<setw(35)<<"! ! G A M E O V E R ! !\n";
 				    cout<<"--------------------------------------------\n";
+				    player.showitemsnleader();
 				    cout<<"        Good bye the 'Pirate's Sea'.\n        and thank you to enjoy us.\n";
 					cout<<"               See you soon......\n";
 				    cout<<"--------------------------------------------\n";
@@ -443,12 +447,16 @@ void unit::showStatus(){
 void unit::shop(){
 	int sel;
 	int pricelist[11] = {100,80,50,200,500,150,300,550,5,99,1};
-	
+	string items[11] = {"GRAPPLING HOOK","CUTLASS","STINKPOT","MUSKET","CANNON",
+						"BOARDING AXE","BLUNDERBUS","AK-47","POCARI SWEAT","HOOK",
+						"VERY KAK ITEM"};
+
 	cout<<"--------------------------------------------\n";
 	cout<<"\t  P I R A T E ' S  S T O R E\n";
 	cout<<"--------------------------------------------\n";
 	cout<<"\t    Welcome to our shop!!!\n";
 	cout<<"\twhich one do you want to buy?\n";
+	cout<<"\t[Your money : "<<money<<"]";
 	cout<<"--------------------------------------------\n";
 	cout<<"[1] GRAPPLING HOOK 100b\n";
 	cout<<"[2] CUTLASS 80b\n";
@@ -466,6 +474,7 @@ void unit::shop(){
 	if(money<=0) {
 		cout<<"[!] Not enough money";
 	}
+	item.push_back(items[sel]);
 	switch(sel){
 		case 1:
 		money -= pricelist[0];
@@ -473,6 +482,7 @@ void unit::shop(){
 		cout<<"\t [+] You've got GRAPPLING HOOK\n";
 		cout<<"\t    Your Balance : "<<money<<endl;
 		cout<<"/////////////////////////////////////////////\n";
+		leader += pricelist[0];
 		break;
 		case 2:
 		money -= pricelist[1];
@@ -480,6 +490,7 @@ void unit::shop(){
 		cout<<"\t [+] You've got CUTLASS\n";
 		cout<<"\t    Your Balance : "<<money<<endl;
 		cout<<"/////////////////////////////////////////////\n";
+		leader += pricelist[1];
 		break;
 		case 3:
 		money -= pricelist[2];
@@ -487,6 +498,7 @@ void unit::shop(){
 		cout<<"\t [+] You've got STINKPOT\n";
 		cout<<"\t    Your Balance : "<<money<<endl;
 		cout<<"/////////////////////////////////////////////\n";
+		leader += pricelist[2];
 		break;
 		case 4:
 		money -= pricelist[3];
@@ -494,6 +506,7 @@ void unit::shop(){
 		cout<<"\t [+] You've got MUSKET\n";
 		cout<<"\t    Your Balance : "<<money<<endl;
 		cout<<"/////////////////////////////////////////////\n";
+		leader += pricelist[3];
 		break;
 		case 5:
 		money -= pricelist[4];
@@ -501,6 +514,7 @@ void unit::shop(){
 		cout<<"\t [+] You've got CANNON\n";
 		cout<<"\t    Your Balance : "<<money<<endl;
 		cout<<"/////////////////////////////////////////////\n";
+		leader += pricelist[4];
 		break;
 		case 6:
 		money -= pricelist[5];
@@ -508,6 +522,7 @@ void unit::shop(){
 		cout<<"\t [+] You've got BOARDING AXE\n";
 		cout<<"\t    Your Balance : "<<money<<endl;
 		cout<<"/////////////////////////////////////////////\n";
+		leader += pricelist[5];
 		break;
 		case 7:
 		money -= pricelist[6];
@@ -515,6 +530,7 @@ void unit::shop(){
 		cout<<"\t [+] You've got BLUNDERBUS\n";
 		cout<<"\t    Your Balance : "<<money<<endl;
 		cout<<"/////////////////////////////////////////////\n";
+		leader += pricelist[6];
 		break;
 		case 8:
 		money -= pricelist[7];
@@ -522,6 +538,7 @@ void unit::shop(){
 		cout<<"\t [+] You've got AK_47\n";
 		cout<<"\t    Your Balance : "<<money<<endl;
 		cout<<"/////////////////////////////////////////////\n";
+		leader += pricelist[7];
 		break;
 		case 9:
 		money -= pricelist[8];
@@ -529,6 +546,7 @@ void unit::shop(){
 		cout<<"\t [+] You've got POCARI SWEAT\n";
 		cout<<"\t    Your Balance : "<<money<<endl;
 		cout<<"/////////////////////////////////////////////\n";
+		leader += pricelist[8];
 		break;
 		case 10:
 		money -= pricelist[9];
@@ -536,6 +554,7 @@ void unit::shop(){
 		cout<<"\t [+] You've got HOOK\n";
 		cout<<"\t    Your Balance : "<<money<<endl;
 		cout<<"/////////////////////////////////////////////\n";
+		leader += pricelist[9];
 		break;
 		case 11:
 		money -= pricelist[10];
@@ -543,7 +562,23 @@ void unit::shop(){
 		cout<<"\t [+] You've got VERY KAK ITEM\n";
 		cout<<"\t    Your Balance : "<<money<<endl;
 		cout<<"/////////////////////////////////////////////\n";
+		leader += pricelist[10];
 		break;
 	}
+}
 
+void unit::showitemsnleader(){
+	for(int i=0;i<item.size();i++){
+		cout<<"\tYou got items....\n";
+		cout<<" "<<item[i]<<" ";
+	}
+	cout<<"\n--------------------------------------------\n";
+	cout<<setw(25)<<"[Your rank is ";
+	if(leader >= 200 && leader <= 299) cout<<"D]";
+	else if(leader >= 300 && leader <= 399) cout<<"C]";
+	else if(leader >= 400 && leader <= 449) cout<<"B]";
+	else if(leader >= 450 && leader <= 499) cout<<"A]";
+	else if(leader >= 500) cout<<"S]";
+	else cout<<"F]";
+	cout<<"\n";
 }
