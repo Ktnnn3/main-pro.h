@@ -145,7 +145,10 @@ int main(){
 			}
 
 			while(true){
-				player.newTurn();	
+				player.newTurn();
+				bot.newTurn();
+				bot.Hit(cc);
+				bot.Hit(cc);
 				if(player_start == 'P'){
 					while(player.betmoney());
 					while(player.scorecheck() == true){
@@ -187,9 +190,7 @@ int main(){
 
 					break;
 				}
-				bot.newTurn();
-				bot.Hit(cc);
-				bot.Hit(cc);
+				
 		
 				while(player.scorecheck() == false){
 					player.removemoney();
