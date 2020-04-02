@@ -80,7 +80,7 @@ void gamedraw();
 
 void gamewin();
 
-void mainmenu();
+void chooseaction();
 
 void startgameinfomation();
 
@@ -131,13 +131,13 @@ int main(){
 			while(true){
 				player.newTurn();
 				bot.newTurn();
-				mainmenu();	
+				chooseaction();	
 				if(player_start == 'P'){
 					while(player.betmoney());
 						bot.Hit(cc);
-						//bot.showStatus();
+						bot.showStatus();
 						bot.Hit(cc);
-						//bot.showStatus();
+						bot.showStatus();
 						//show status
 					while(player.scorecheck() == true){
 						cout << "\t [H] Hit [S] Stand";
@@ -174,7 +174,7 @@ int main(){
 								if(bot.getscore()<player.getscore()){
 									bot.Hit(cc);
 									bot.showStatus();
-									cout << "[Enter] ";
+									//cout << "[Enter] ";
                            		 	cin.get();
 								}else if(bot.getscore()==player.getscore() && bot.getscore()==21){
 									player.gamedraw();
@@ -210,13 +210,12 @@ int main(){
 
 					cout<<"--------------------------------------------\n";
 				    cout<<setw(35)<<"! ! G A M E O V E R ! !\n";
-				    cout<<"--------------------------------------------\n";
+				    cout<<"--------------------------------------------";
 				    player.showitemsnleader();
 				    cout<<"        Good bye the 'Pirate's Sea'.\n        and thank you to enjoy us.\n";
 					cout<<"               See you soon......\n";
 				    cout<<"--------------------------------------------\n";
-
-					break;
+					int menu = 0;
 				}
 
 				//??????? gameover ??????????????????????????? 0 ?????????????
@@ -259,16 +258,6 @@ int main(){
 
 
 		}
-
-
-
-
-
-
-
-
-
-
 
 	}
 
@@ -361,7 +350,7 @@ void unit::create(string t){
 			getline(cin,name);
 			money = 500;
 		}else if(t == "bot"){
-			name = "more money\n";
+			name = "Enemy";
 
 		}
 }
@@ -552,8 +541,8 @@ void unit::showitemsnleader(){
 		cout<<"\tYou got items....\n";
 		cout<<" "<<item[i]<<" ";
 	}
-	cout<<"\n--------------------------------------------\n";
-	cout<<setw(25)<<"[Your rank is ";
+	
+	cout<<setw(25)<<"    [Your rank is ";
 	if(leader >= 200 && leader <= 299) cout<<"D]";
 	else if(leader >= 300 && leader <= 399) cout<<"C]";
 	else if(leader >= 400 && leader <= 449) cout<<"B]";
@@ -563,7 +552,7 @@ void unit::showitemsnleader(){
 	cout<<"\n";
 }
 
-void mainmenu(){
+void chooseaction(){
 	cout << "\t [P] Play [E] Exit";
 	cout << "\nEnter your action: ";
 	cin >> player_start;
