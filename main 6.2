@@ -684,7 +684,7 @@ void startgameinfomation(){
 }
 
 void howtoplay(){
-	int order;
+		int order;
 				cout << "*******************************************************\n";
 				cout << "*                                                     *\n";
 				cout << "*                Welcome to our game!                 *\n";
@@ -700,16 +700,25 @@ void howtoplay(){
 			if(order==1){
 				int repeat;
 				do{
+					cout<<"-------------------------------------------------------------------------------------------------------------\n";
 					cout<<"Firstly, your own money is 500 bahts.\nyou have to bet your own money to the game and there is no minimum betting requirements\n";
+					cout<<"-------------------------------------------------------------------------------------------------------------\n";
 					cout<<"press enter to continue..."<<endl;
+					cin.ignore();
 					cin.get();
+					cout<<"------------------------------------------------------------------------------------------------------------\n";
 					cout<<"The principle is simple: after everyone has received all the cards in their hand\nEveryone can draw unlimited number of cards \nDraw until your point is over 21 or you get a happy at the point\n";
+					cout<<"------------------------------------------------------------------------------------------------------------\n";
 					cout<<"press enter to continue..."<<endl;
 					cin.get();
+					cout<<"-------------------------------------------------------------------------------------------------------------\n";
 					cout<<"If your card point is higher than opponent, you will be the winner of that game and get double money of you bet\n";
+					cout<<"-------------------------------------------------------------------------------------------------------------\n";
 					cout<<"press enter to continue..."<<endl;
 					cin.get();
+					cout<<"-------------------------------------------------------------------------------------------------------------\n";
 					cout<<"On the other hand,if your card point over 21, you will lose in that game and lose your money as well\n";
+					cout<<"-------------------------------------------------------------------------------------------------------------\n";
 					cout<<"press enter to continue..."<<endl;
 					cin.get();
 					cout<<"Do you want to repeat again? Yes[1],No[0]\n";
@@ -719,17 +728,25 @@ void howtoplay(){
 				}else if(order==2){
 				int repeat1;
 					do{
-						;
+						cout<<"-------------------------------------------------------------------------------------------------------------\n";
 						cout<<"1.Cards from 2 - 10 have points according to the face of the card.\n";
+						cout<<"-------------------------------------------------------------------------------------------------------------\n";
 						cout<<"press enter to continue..."<<endl;
+						cin.ignore();
 						cin.get();
+						cout<<"-------------------------------------------------------------------------------------------------------------\n";
 						cout<<"2.J is equal to 11\nQ K is equal to 12\nK is equal to 13\n";
+						cout<<"-------------------------------------------------------------------------------------------------------------\n";
 						cout<<"press enter to continue..."<<endl;
 						cin.get();
+						cout<<"-------------------------------------------------------------------------------------------------------------\n";
 						cout<<"3.card A has a score of 1.\n";
+						cout<<"-------------------------------------------------------------------------------------------------------------\n";
 						cout<<"press enter to continue..."<<endl;
 						cin.get();
+						cout<<"-------------------------------------------------------------------------------------------------------------\n";
 						cout<<"4.The total value of the cards equals 21 is blackjack.\n";
+						cout<<"-------------------------------------------------------------------------------------------------------------\n";
 						cout<<"press enter to continue..."<<endl;
 						cin.get();
 						cout<<"Do you want to repeat again? Yes[1],No[0]\n";
@@ -741,6 +758,7 @@ void howtoplay(){
 					cout<<"your input is not correct.";
 				}
 			}
+
 }
 
 void showgameover(){
