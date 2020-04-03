@@ -47,10 +47,7 @@ do{
 		cout<<"/////////////////////////////////////////////\n";
 		leader += pricelist[0];
 		item.push_back(items[0]);
-			}
-		cout<<"Do you want to buy another one?"<<endl;
-		cout<<"YES press [1] or NO press [2]"
-		cin>>choose;
+				}
 		break;
 		case 2:
 			if(money<80){
@@ -82,7 +79,7 @@ do{
 		cout<<"/////////////////////////////////////////////\n";
 		leader += pricelist[2];
 		item.push_back(items[2]);
-		}
+				}
 		break;
 		case 4:
 			if(money<200){
@@ -99,7 +96,7 @@ do{
 		cout<<"/////////////////////////////////////////////\n";
 		leader += pricelist[3];
 		item.push_back(items[3]);
-		}
+				}
 		break;
 		case 5:
 			if(money<500){
@@ -115,7 +112,7 @@ do{
 		cout<<"/////////////////////////////////////////////\n";
 		leader += pricelist[4];
 		item.push_back(items[4]);
-		}
+				}
 		break;
 		case 6:
 			if(money<150){
@@ -131,7 +128,7 @@ do{
 		cout<<"/////////////////////////////////////////////\n";
 		leader += pricelist[5];
 		item.push_back(items[5]);
-		}
+				}
 		break;
 		case 7:
 			if(money<300){
@@ -147,7 +144,7 @@ do{
 		cout<<"/////////////////////////////////////////////\n";
 		leader += pricelist[6];
 		item.push_back(items[6]);
-		}
+				}
 		break;
 		case 8:
 			if(money<550){
@@ -163,7 +160,7 @@ do{
 		cout<<"/////////////////////////////////////////////\n";
 		leader += pricelist[7];
 		item.push_back(items[7]);
-		}
+				}
 		break;
 		case 9:
 			if(money<5){
@@ -178,7 +175,8 @@ do{
 		cout<<"\t    Your Balance : "<<money<<endl;
 		cout<<"/////////////////////////////////////////////\n";
 		leader += pricelist[8];
-		}
+		item.push_back(items[8]);
+				}
 		break;
 		case 10:
 			if(money<99){
@@ -193,7 +191,8 @@ do{
 		cout<<"\t    Your Balance : "<<money<<endl;
 		cout<<"/////////////////////////////////////////////\n";
 		leader += pricelist[9];
-		}
+		item.push_back(items[9]);
+				}
 		break;
 		case 11:
 			if(money<1){
@@ -208,9 +207,13 @@ do{
 		cout<<"\t    Your Balance : "<<money<<endl;
 		cout<<"/////////////////////////////////////////////\n";
 		leader += pricelist[10];
-		}
+		item.push_back(items[10]);
+				}
+		//break;
 	}
-		
+	cout<<"Do you want to buy another one?"<<endl;
+	cout<<"YES press [1] or No press [2]";
+	cin>>choose;	
 }while(choose==1);
-	break;
+	//break;
 }
