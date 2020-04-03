@@ -30,7 +30,7 @@ do{
 	if(money<=0) {
 		cout<<"[!] Not enough money";
 	}
-	item.push_back(items[sel]);
+	
 	switch(sel){
 		case 1:
 			if(money<100){
@@ -46,12 +46,12 @@ do{
 		cout<<"\t    Your Balance : "<<money<<endl;
 		cout<<"/////////////////////////////////////////////\n";
 		leader += pricelist[0];
-		item.push_back(items[sel]);
+		item.push_back(items[0]);
 			}
 		cout<<"Do you want to buy another one?"<<endl;
 		cout<<"YES press [1] or NO press [2]"
 		cin>>choose;
-		if(choose==2) break;
+		break;
 		case 2:
 			if(money<80){
 				cout<<"[!] Not enough money";
@@ -65,6 +65,7 @@ do{
 		cout<<"\t    Your Balance : "<<money<<endl;
 		cout<<"/////////////////////////////////////////////\n";
 		leader += pricelist[1];
+		item.push_back(items[1]);
 				}
 		break;
 		case 3:
@@ -80,6 +81,7 @@ do{
 		cout<<"\t    Your Balance : "<<money<<endl;
 		cout<<"/////////////////////////////////////////////\n";
 		leader += pricelist[2];
+		item.push_back(items[2]);
 		}
 		break;
 		case 4:
@@ -96,6 +98,7 @@ do{
 		cout<<"\t    Your Balance : "<<money<<endl;
 		cout<<"/////////////////////////////////////////////\n";
 		leader += pricelist[3];
+		item.push_back(items[3]);
 		}
 		break;
 		case 5:
@@ -111,6 +114,7 @@ do{
 		cout<<"\t    Your Balance : "<<money<<endl;
 		cout<<"/////////////////////////////////////////////\n";
 		leader += pricelist[4];
+		item.push_back(items[4]);
 		}
 		break;
 		case 6:
@@ -126,6 +130,7 @@ do{
 		cout<<"\t    Your Balance : "<<money<<endl;
 		cout<<"/////////////////////////////////////////////\n";
 		leader += pricelist[5];
+		item.push_back(items[5]);
 		}
 		break;
 		case 7:
@@ -141,6 +146,7 @@ do{
 		cout<<"\t    Your Balance : "<<money<<endl;
 		cout<<"/////////////////////////////////////////////\n";
 		leader += pricelist[6];
+		item.push_back(items[6]);
 		}
 		break;
 		case 8:
@@ -156,6 +162,7 @@ do{
 		cout<<"\t    Your Balance : "<<money<<endl;
 		cout<<"/////////////////////////////////////////////\n";
 		leader += pricelist[7];
+		item.push_back(items[7]);
 		}
 		break;
 		case 9:
