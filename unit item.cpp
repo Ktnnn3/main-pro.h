@@ -13,7 +13,7 @@ void unit::shop(){
 	cout<<"\twhich one do you want to buy?\n";
 	cout<<"\t[Your money : "<<money<<"]";
 	cout<<"--------------------------------------------\n";
-while(true){
+do{
 	cout<<"[1] GRAPPLING HOOK 100b\n";
 	cout<<"[2] CUTLASS 80b\n";
 	cout<<"[3] STINKPOT 50b\n";
@@ -202,7 +202,8 @@ while(true){
 		cout<<"/////////////////////////////////////////////\n";
 		leader += pricelist[10];
 		}
-		break;
 	}
-}
+		
+}while(choose==1);
+	break;
 }
