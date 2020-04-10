@@ -474,7 +474,7 @@ void unit::showStatus(){
 
 void unit::shop(){
 	int sel,choose;
-	int pricelist[11] = {100,80,50,200,500,150,300,550,5,99,1};
+	int pricelist[11] = {10000,800,5000,2000,500,150000,300,5500,555555,990,10000000};
 	string items[11] = {"GRAPPLING HOOK","CUTLASS","STINKPOT","MUSKET","CANNON",
 						"BOARDING AXE","BLUNDERBUS","AK-47","POCARI SWEAT","HOOK",
 						"VERY KAK ITEM"};
@@ -488,17 +488,17 @@ void unit::shop(){
 	cout<<"\t[Your money : "<<money<<"]";
 	cout<<"--------------------------------------------\n";
 do{
-	cout<<"[1] GRAPPLING HOOK 100b\n";
-	cout<<"[2] CUTLASS 80b\n";
-	cout<<"[3] STINKPOT 50b\n";
-	cout<<"[4] MUSKET 200b\n";
+	cout<<"[1] GRAPPLING HOOK 10,000b\n";
+	cout<<"[2] CUTLASS 800b\n";
+	cout<<"[3] STINKPOT 5,000b\n";
+	cout<<"[4] MUSKET 2,000b\n";
 	cout<<"[5] CANNON 500b\n";
-	cout<<"[6] BOARDING AXE 150b\n";
+	cout<<"[6] BOARDING AXE 150,000b\n";
 	cout<<"[7] BLUNDERBUS 300b\n";
-	cout<<"[8] AK-47 550b\n";
-	cout<<"[9] POCARI SWEAT 5b\n";
-	cout<<"[10] HOOK 99b\n";
-	cout<<"[11] VERY KAK ITEM 1b\n";
+	cout<<"[8] AK-47 5,500b\n";
+	cout<<"[9] POCARI SWEAT 555,555b\n";
+	cout<<"[10] HOOK 990b\n";
+	cout<<"[11] VERY KAK ITEM 10,000,000b\n";
 	cout<<"Select : ";
 	cin>>sel;
 	if(money<=0) {
@@ -507,7 +507,7 @@ do{
 	
 	switch(sel){
 		case 1:
-			if(money<100){
+			if(money<10000){
 				cout<<"[!] Not enough money";
 				cout<<"/////////////////////////////////////////////\n";
 				cout<<"\t    Your Balance : "<<money<<endl;
@@ -524,7 +524,7 @@ do{
 			}
 		break;
 		case 2:
-			if(money<80){
+			if(money<800){
 				cout<<"[!] Not enough money";
 				cout<<"/////////////////////////////////////////////\n";
 				cout<<"\t    Your Balance : "<<money<<endl;
@@ -540,7 +540,7 @@ do{
 				}
 		break;
 		case 3:
-			if(money<50){
+			if(money<5000){
 				cout<<"[!] Not enough money";
 				cout<<"/////////////////////////////////////////////\n";
 				cout<<"\t    Your Balance : "<<money<<endl;
@@ -556,7 +556,7 @@ do{
 		}
 		break;
 		case 4:
-			if(money<200){
+			if(money<2000){
 				cout<<"[!] Not enough money";
 				cout<<"/////////////////////////////////////////////\n";
 				cout<<"\t    Your Balance : "<<money<<endl;
@@ -589,7 +589,7 @@ do{
 		}
 		break;
 		case 6:
-			if(money<150){
+			if(money<150000){
 				cout<<"[!] Not enough money";
 				cout<<"/////////////////////////////////////////////\n";
 				cout<<"\t    Your Balance : "<<money<<endl;
@@ -621,7 +621,7 @@ do{
 		}
 		break;
 		case 8:
-			if(money<550){
+			if(money<5500){
 				cout<<"[!] Not enough money";
 				cout<<"/////////////////////////////////////////////\n";
 				cout<<"\t    Your Balance : "<<money<<endl;
@@ -637,7 +637,7 @@ do{
 		}
 		break;
 		case 9:
-			if(money<5){
+			if(money<555555){
 				cout<<"[!] Not enough money";
 				cout<<"/////////////////////////////////////////////\n";
 				cout<<"\t    Your Balance : "<<money<<endl;
@@ -653,7 +653,7 @@ do{
 		}
 		break;
 		case 10:
-			if(money<99){
+			if(money<990){
 				cout<<"[!] Not enough money";
 				cout<<"/////////////////////////////////////////////\n";
 				cout<<"\t    Your Balance : "<<money<<endl;
@@ -669,7 +669,7 @@ do{
 		}
 		break;
 		case 11:
-			if(money<1){
+			if(money<10000000){
 				cout<<"[!] Not enough money";
 				cout<<"/////////////////////////////////////////////\n";
 				cout<<"\t    Your Balance : "<<money<<endl;
