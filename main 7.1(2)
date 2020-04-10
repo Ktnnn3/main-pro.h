@@ -665,9 +665,7 @@ void chooseaction(){
 	cout << "\nEnter your action: ";
 	cin >> player_start;
 	player_start = toupper(player_start);
-	while (player_start!=P&&player_start!=E){
-		cout<<"Please enter action again";
-	}
+	
 }
 
 void startgameinfomation(){
