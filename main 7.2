@@ -113,7 +113,7 @@ int main(){
 		while(!(cin>>input_menu)){
 			cout<<"Please select menu again";
 			cin.clear();
-			cin.ignore(123,"\n");
+			
 		}
 		checkgamemode(input_menu);
 		checkgamemode(input_menu);
@@ -298,7 +298,6 @@ bool unit::betmoney(){ //x cin from player
 	while(!(cin>>player_bit)){
 		cout<<"Please Enter New bet";
 		cin.clear();
-		cin.ignore(123,'\n');
 	}
 	if(player_bit>money){
 		cout << "[!] Not enough money\n";
