@@ -289,7 +289,7 @@ bool unit::betmoney(){ //x cin from player
 	cout << "Enter your bet: ";
 	int player_bit;
 	cin >> player_bit;
-	while(!(cin>>bit)){
+	while(!(cin>>player_bit)){
 		cout<<"Please Enter New bet";
 		cin.clear();
 		cin.ignore(123,'\n');
@@ -860,7 +860,7 @@ void chooseaction(){
 	cout << "\nEnter your action: ";
 	cin >> player_start;
 	player_start = toupper(player_start);
-	while (player_start!=P&&player_start!=E){
+	while (player_start!="P"&&player_start!="E"){
 		cout<<"Please enter action again";
 	}
 }
