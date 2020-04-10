@@ -138,10 +138,9 @@ int main(){
 				chooseaction();	
 				if(player_start == 'P'){
 					while(player.betmoney());
+					while(player.scorecheck() == true){
 						bot.Hit(cc);
 						bot.showStatus();
-						//show status
-					while(player.scorecheck() == true){
 						cout << "\t [H] Hit [S] Stand";
 						cout << "\nEnter your action: ";
 						cin >> player_action;
