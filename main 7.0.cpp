@@ -150,10 +150,13 @@ int main(){
 							//PlaySound(TEXT("hit.wav"), NULL, SND_SYNC); //do not unlock if you not install
                         	player.Hit(cc);
                         	player.showStatus();
+				bot.showStatus();
                    		}
 						if(player_action == 'S'){
 							//PlaySound(TEXT("save.wav"), NULL, SND_SYNC); //do not unlock if you not install
 							player.stand();
+							player.showStatus();
+							bot.showStatus();
 							break;
 						}
 					}
@@ -178,6 +181,7 @@ int main(){
 									cin.ignore();
 									cin.get();
 									bot.Hit(cc);
+									player.showStatus();
 									bot.showStatus();
 									
 								}else if(bot.getscore()==player.getscore()){
