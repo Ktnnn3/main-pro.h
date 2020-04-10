@@ -36,11 +36,12 @@ class unit{
 	public:	
 		void showitemsnleader(); //show rank after lost
 		void shop(); //goto shop
-        void showStatus(); //????		
+        	void showStatus(); //????		
 		bool betmoney(); //???????????? bet
 		void Addmoney(); //?????????????????
 		void removemoney();//??????????????
 		bool checkgameover();
+		bool checkgamewin();
 		void Hit(vector<Card> &);//??????????????????????????
 		void newTurn();
 		void create(string);//??? hero ???? bot
@@ -61,6 +62,8 @@ void Addmoney();
 void removemoney();
 
 bool checkgameover();
+
+bool checkgamewin();
 
 void checkgamemode(int);
 
@@ -226,7 +229,7 @@ int main(){
 
 
 				player.checkgameover();
-					if(player.checkgameover() == 1){
+					if(player.checkgameover() == true){
 
 					cout<<"--------------------------------------------\n";
 				    cout<<setw(35)<<"! ! G A M E O V E R ! !\n";
@@ -238,7 +241,10 @@ int main(){
 					gamestart = 0;
 					break;
 					
-				}else if(player.checkgameover() == 2){
+				}
+				
+				player.checkgamewin();
+					if(player.checkgamewin() == true){
 
 					cout<<"--------------------------------------------\n";
 				    cout<<setw(35)<<"! ! YOU ARE THE WINNER ! !\n";
@@ -338,12 +344,14 @@ void unit::removemoney(){ //x from function bet.
 
 
 bool unit::checkgameover (){
-	if(money<=0 ) return 1;
-	else if(leader == 10730645) return 2;
-	else return 0;
+	if(money<=0 ) return true;
+	else return false;
 }
 
-
+bool unit::checkgamewin (){
+	if(leader == 10730645 ) return true;
+	else return false;
+}
 
 
 void checkgamemode(int x){
