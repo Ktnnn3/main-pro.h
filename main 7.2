@@ -668,11 +668,11 @@ void unit::showitemsnleader(){
 	}
 	
 	cout<<setw(25)<<"    [Your rank is ";
-	if(leader >= 200 && leader <= 299) cout<<"D]";
-	else if(leader >= 300 && leader <= 399) cout<<"C]";
-	else if(leader >= 400 && leader <= 449) cout<<"B]";
-	else if(leader >= 450 && leader <= 499) cout<<"A]";
-	else if(leader >= 500) cout<<"S]";
+	if(leader >= 501 && leader <= 10000) cout<<"D]";
+	else if(leader >= 10001 && leader <= 499999) cout<<"C]";
+	else if(leader >= 500000 && leader <= 999999) cout<<"B]";
+	else if(leader >= 1000000 && leader <= 11999999) cout<<"A]";
+	else if(leader >= 12000000) cout<<"S]";
 	else cout<<"F]";
 	cout<<"\n";
 }
@@ -798,12 +798,12 @@ void leaderfunc(){
 	cout<<"--------------------------------------------\n";
 	cout<<setw(10)<<"Rank"<<setw(30)<<"Payment\n";	
 	cout<<"--------------------------------------------\n";
-	cout<<"[S] Pirate king"<<setw(30)<<"500+\n";
-	cout<<"[A] First mate"<<setw(31)<<"450-499\n";
-	cout<<"[B] Advisor"<<setw(34)<<"400-449\n";
-	cout<<"[C] Assassin"<<setw(33)<<"300-399\n";
-	cout<<"[D] Servant"<<setw(34)<<"200-299\n";
-	cout<<"[F] Cabin Boy"<<setw(32)<<"0-199\n";
+	cout<<"[S] Pirate king"<<setw(30)<<"12,000,000+\n";
+	cout<<"[A] First mate"<<setw(31)<<"1,000,000-11,999,999\n";
+	cout<<"[B] Advisor"<<setw(34)<<"500,000-999,999\n";
+	cout<<"[C] Assassin"<<setw(33)<<"10,001-499,999\n";
+	cout<<"[D] Servant"<<setw(34)<<"501-10,000\n";
+	cout<<"[F] Cabin Boy"<<setw(32)<<"0-500\n";
 	cout<<"--------------------------------------------\n";
 }
 	
