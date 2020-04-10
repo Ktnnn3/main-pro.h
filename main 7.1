@@ -289,6 +289,11 @@ bool unit::betmoney(){ //x cin from player
 	cout << "Enter your bet: ";
 	int player_bit;
 	cin >> player_bit;
+	while(!(cin>>bit)){
+		cout<<"Please Enter New bet";
+		cin.clear();
+		cin.ignore(123,'\n');
+	}
 	if(player_bit>money){
 		cout << "[!] Not enough money\n";
 		return true;
@@ -668,7 +673,10 @@ void chooseaction(){
 	cout << "\t [P] Play [E] Exit";
 	cout << "\nEnter your action: ";
 	cin >> player_start;
-	player_start = toupper(player_start); 
+	player_start = toupper(player_start);
+	while (player_start!=P&&player_start!=E){
+		cout<<"Please enter action again";
+	}
 }
 
 void startgameinfomation(){
