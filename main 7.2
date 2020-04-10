@@ -689,7 +689,9 @@ void unit::showitemsnleader(){
 void chooseaction(){
 	cout << "\t [P] Play [E] Exit";
 	cout << "\nEnter your action: ";
-	cout<<"Please enter action again";
+	cin >> player_start;
+	player_start = toupper(player_start);
+	
 }
 
 void startgameinfomation(){
