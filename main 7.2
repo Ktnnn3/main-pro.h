@@ -110,6 +110,12 @@ int main(){
 		cout<<"Type [3] check leader board"<<endl;
 		int input_menu;
 		cin>>input_menu;
+		while(!(cin>>input_menu)){
+			cout<<"Please select menu again";
+			cin.clear();
+			cin.ignore(123,"\n");
+		}
+		checkgamemode(input_menu);
 		checkgamemode(input_menu);
 
 
@@ -674,11 +680,11 @@ void unit::showitemsnleader(){
 void chooseaction(){
 	cout << "\t [P] Play [E] Exit";
 	cout << "\nEnter your action: ";
-	cin >> player_start;
-	player_start = toupper(player_start);
-	while (player_start!="P"&&player_start!="E"){
-		cout<<"Please enter action again";
+	while (player_start ='P'&&player_start ='E'){
+		cin >> player_start;
+		player_start = toupper(player_start);
 	}
+	cout<<"Please enter action again";
 }
 
 void startgameinfomation(){
