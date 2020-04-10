@@ -226,7 +226,7 @@ int main(){
 
 
 				player.checkgameover();
-					if(player.checkgameover() == true){
+					if(player.checkgameover() == 1){
 
 					cout<<"--------------------------------------------\n";
 				    cout<<setw(35)<<"! ! G A M E O V E R ! !\n";
@@ -238,6 +238,17 @@ int main(){
 					gamestart = 0;
 					break;
 					
+				}else if(player.checkgameover() == 2){
+
+					cout<<"--------------------------------------------\n";
+				    cout<<setw(35)<<"! ! YOU ARE THE WINNER ! !\n";
+				    cout<<"--------------------------------------------";
+				    player.showitemsnleader();
+				    cout<<"        Good bye the 'Pirate's Sea'.\n        and thank you to enjoy us.\n";
+					cout<<"               See you soon......\n";
+				    cout<<"--------------------------------------------\n";
+					gamestart = 0;
+					break;
 				}
 
 				//??????? gameover ??????????????????????????? 0 ?????????????
@@ -327,8 +338,9 @@ void unit::removemoney(){ //x from function bet.
 
 
 bool unit::checkgameover (){
-	if(money<=0 && money>=10730645) return true;
-	else return false;
+	if(money<=0 ) return 1;
+	else if(leader == 10730645) return 2;
+	else return 0;
 }
 
 
