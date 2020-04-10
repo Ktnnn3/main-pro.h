@@ -180,7 +180,14 @@ int main(){
 									bot.Hit(cc);
 									bot.showStatus();
 									
-								}else if(bot.getscore()==player.getscore()){
+								}else if(bot.getscore()==player.getscore()&& bot.getscore()<22){
+									cout << "Enemy Hit [Press Enter]";
+									cin.ignore();
+									cin.get();
+									bot.Hit(cc);
+									bot.showStatus();
+									break;
+								}else if(bot.getscore()==player.getscore()&& bot.getscore()>=21){
 									player.gamedraw();
 									bot_action = 'E';
 									break;
