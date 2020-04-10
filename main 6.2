@@ -631,9 +631,9 @@ do{
 	}
 		cout<<"Do you want to buy another one?"<<endl;
 		cout<<"YES press [1] or NO press [2]"
-		cin>>choose;
-}while(choose==1);
-	break;
+		cin >>choose;
+        if(choose!=1)break;
+    }while(choose==1);
 }
 
 void unit::showitemsnleader(){
