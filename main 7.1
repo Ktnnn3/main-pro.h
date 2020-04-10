@@ -138,9 +138,10 @@ int main(){
 				chooseaction();	
 				if(player_start == 'P'){
 					while(player.betmoney());
-					while(player.scorecheck() == true){
 						bot.Hit(cc);
 						bot.showStatus();
+					while(player.scorecheck() == true){
+						
 						cout << "\t [H] Hit [S] Stand";
 						cout << "\nEnter your action: ";
 						cin >> player_action;
@@ -176,16 +177,19 @@ int main(){
 									cout << "Enemy Hit [Press Enter]";
 									cin.ignore();
 									cin.get();
+									cin.ignore();
 									bot.Hit(cc);
+									player.showStatus();
 									bot.showStatus();
 									
 								}else if(bot.getscore()==player.getscore()&& bot.getscore()<22){
 									cout << "Enemy Hit [Press Enter]";
 									cin.ignore();
 									cin.get();
+									cin.get();
 									bot.Hit(cc);
+									player.showStatus();
 									bot.showStatus();
-									break;
 								}else if(bot.getscore()==player.getscore()&& bot.getscore()>=21){
 									player.gamedraw();
 									bot_action = 'E';
