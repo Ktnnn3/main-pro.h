@@ -860,12 +860,12 @@ void howtoplayfunc()
                 cin.ignore();
                 cin.get();
                 cout << "--------------------------------------------\n";
-                cout << "  The principle is simple: after everyone \n has received all the cards in their hand\n Everyone can draw unlimited number of cards \n   Draw until your point is over 21 or you \n   get a happy at the point\n";
+                cout << "  The principle is simple: after everyone \n has received all the cards in their hand\n Everyone can draw unlimited number of cards \n   Draw until your point is 21 or close  \n   to 21 or get a happy at the point\n";
                 cout << "--------------------------------------------\n";
                 cout << "\tpress enter to continue..." << endl;
                 cin.get();
                 cout << "--------------------------------------------\n";
-                cout << " If your card point is higher than opponent, \n   you will be the winner of that game \n   and get double money of you bet\n";
+                cout << " If your card point is higher than opponent, \n         And be less than 21 \n   you will be the winner of that game \n   and get double money of you bet\n";
                 cout << "--------------------------------------------\n";
                 cout << "\tpress enter to continue..." << endl;
                 cin.get();
@@ -890,7 +890,7 @@ void howtoplayfunc()
                 cin.ignore();
                 cin.get();
                 cout << "--------------------------------------------\n";
-                cout << "\t2.J is equal to 11\n\tQ K is equal to 12\n\tK is equal to 13\n";
+                cout << "\t2.J is equal to 11\n\t  Q is equal to 12\n\t  K is equal to 13\n";
                 cout << "--------------------------------------------\n";
                 cout << "\tpress enter to continue..." << endl;
                 cin.get();
