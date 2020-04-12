@@ -13,7 +13,8 @@
 
 using namespace std;
 int gameover=0;
-int gamestart=0,howtoplay=0,leaderB=0;
+int gamestart=0,howtoplay=0,leaderB=0,order=0;
+int input_menu=0;
 char player_start = '\0';
 bool nameagain = true;
 
@@ -28,24 +29,24 @@ class unit{
 		string name;
 		string typeofp;
 		vector<string> item; //items in shop
-		vector<string> onhand;  //?????????????????????
+		vector<string> onhand;  
 		int leader;
-		int money;		//?????????
-		int score;		//??????????????????????????
-		int betm;		//????????????????
+		int money;	
+		int score;	
+		int betm;		
 		bool stand_on;		
 	public:	
 		void showitemsnleader(); //show rank after lost
 		void shop(); //goto shop
-        void showStatus(); //????		
-		bool betmoney(); //???????????? bet
-		void Addmoney(); //?????????????????
-		void removemoney();//??????????????
+        void showStatus(); //Show card on hand		
+		bool betmoney(); 
+		void Addmoney(); 
+		void removemoney();
 		bool checkgameover();
 		bool checkgamewin();
-		void Hit(vector<Card> &);//??????????????????????????
+		void Hit(vector<Card> &);
 		void newTurn();
-		void create(string);//??? hero ???? bot
+		void create(string); //create 'hero' or 'bot'
 		bool scorecheck();
 		void gamelost();
 		bool stand();
@@ -74,9 +75,9 @@ void newTurn();
 
 void create(string);
 
-bool scorecheck();  //??????????? 21 ????
+bool scorecheck();  
 
-int getscore(); //???score ?????? private
+int getscore(); 
 
 void gamelost();
 
@@ -119,8 +120,8 @@ int main(){
 		cout<<"\tType [1] to start game"<<endl;
 		cout<<"\tType [2] how to play the game"<<endl;
 		cout<<"\tType [3] check leader board"<<endl;
-		int input_menu;
 		cout<<"\tEnter your input : ";
+		cin.clear();
 		cin>>input_menu;
         while(input_menu != 1){
             if(input_menu == 2| input_menu ==3)break;
@@ -133,7 +134,6 @@ int main(){
             }
         }
 		checkgamemode(input_menu);
-
 
 		while(gamestart==1){
 			//PlaySound(TEXT("gameStart.wav"), NULL, SND_SYNC); //do not unlock if you not install
@@ -192,7 +192,7 @@ int main(){
 				}
 
 				if(player.scorecheck() != false){
-						while(player.stand() == true){ //??????????? bot ????? player ????? stand
+						while(player.stand() == true){ 
 
 
 							while(bot.scorecheck() == true){
@@ -267,10 +267,10 @@ int main(){
 					break;
 				}
 			}
-
 		}
 		while(howtoplay==1){
 			howtoplayfunc();
+			gamestart=0;
 			break;
 
 
@@ -279,7 +279,8 @@ int main(){
 		}
 
 		while(leaderB==1){
-			leaderfunc();	
+			leaderfunc();
+			gamestart=0;
 			break;
 
 
@@ -352,7 +353,7 @@ void checkgamemode(int x){
 	if(x==1) gamestart=1;
 	else if(x==2) howtoplay=1;
 	else if(x==3) leaderB=1;
-
+	input_menu=0;
 }
 
 
@@ -735,11 +736,14 @@ void startgameinfomation(){
 	cout<<"--------------------------------------------\n";
 	cout<<"           [+] You get 500 Baht \n";
 	cout<<"--------------------------------------------\n";
-	cout<<"\tEnter to start the game!";
+	cout<<"\tEnter to start the game!"<<endl;
 }
 
 void howtoplayfunc(){
-		int order;
+			howtoplay=0;
+			if(order==3) {
+				return ;	
+			}
 				cout << "    **************************************\n";
 				cout << "    *                                    *\n";
 				cout << "    *          Welcome to our game!      *\n";
@@ -747,7 +751,9 @@ void howtoplayfunc(){
 				cout << "    **************************************\n";
 			cout<<" I will tell how to play to you step by step."<<endl;
 			while(true){
-			
+			if(order==3) {
+				break;	
+			}
 			cout<<"\tpress[1] to show Rules of play\n\tpress[2] to Card point\n\tpress[3] to Exit\n ";
 			cout<<"\tEnter your input: ";
 			cin>>order;
@@ -807,13 +813,13 @@ void howtoplayfunc(){
 						cin>>repeat1;
 						}while(repeat1==1);
 				}else if(order==3) {
-					gamestart = 0;
+					startgameinfomation();
+					gamestart=0;
 					break;
 				}else{
 					cout<<"\tYour input is not correct.";
 				}
 			}
-
 }
 
 void leaderfunc(){
@@ -830,6 +836,7 @@ void leaderfunc(){
 	cout<<" [D] Servant"<<setw(32)<<"501-10,000\n";
 	cout<<" [F] Cabin Boy"<<setw(30)<<"0-500\n";
 	cout<<"--------------------------------------------\n";
+	leaderB=0;
 }
 	
 
