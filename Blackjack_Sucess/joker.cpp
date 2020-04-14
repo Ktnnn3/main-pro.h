@@ -109,7 +109,7 @@ int main()
     system("COLOR E0");                    //color of font and console app
     startgameinfomation();
     PlaySound(TEXT("coin.wav"), NULL, SND_SYNC); //do not unlock if you not install
-    PlaySound("pirate.wav", NULL, SND_FILENAME|SND_LOOP|SND_ASYNC); //background musics
+    //PlaySound("pirate.wav", NULL, SND_FILENAME|SND_LOOP|SND_ASYNC); //background musics
 
     int menu = 0;
     srand(time(0));
